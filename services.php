@@ -2,7 +2,7 @@
 
 <?php
 	
-	include 'comment_config.php';
+	include 'CSS/comment_config.php';
 
 	if (isset($_POST['post_comment'])) {
 
