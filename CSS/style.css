@@ -2134,7 +2134,9 @@ input[type="range"]:active::-webkit-slider-thumb{
     color: white;
     padding-top: 5px;
     padding-bottom: 5px;
-    display: flex;
+    position: absolute;
+    top: 830px;
+    left: 660px;
     border-radius: 5px;
 }
 
