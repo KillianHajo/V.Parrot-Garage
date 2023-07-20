@@ -46,3 +46,54 @@ Vous avez maintenant un environnement de développement en local avec WampServer
 #### Si les identifiants sont valides, le serveur redirige l'utilisateur vers la page d'accueil du site web.
 #### Si les identifiants sont invalides, le serveur affiche un message d'erreur sur la page de connexion pour informer l'utilisateur que les identifiants sont incorrects.
 #### Ceci est un diagramme de séquence de base pour la connexion à votre site web. Selon votre application spécifique, il pourrait y avoir d'autres fonctionnalités et étapes impliquées dans le processus de connexion. Le diagramme peut également être étendu pour inclure d'autres interactions entre l'utilisateur, le site web et le serveur.
+
+
+# Diagramme de classes :
+                    +-----------------+
+                    |   Utilisateur   |
+                    +-----------------+
+                    | - idUtilisateur |
+                    | - nom           |
+                    | - email         |
+                    | - téléphone     |
+                    | - motDePasse    |
+                    +-----------------+
+                           ^
+                           |
+                           |
+               +-----------------------+
+               |      PriseContact      |
+               +-----------------------+
+               | - idPriseContact      |
+               | - idUtilisateur (FK)  |
+               | - idVehicule (FK)     |
+               | - message             |
+               | - datePriseContact    |
+               +-----------------------+
+                        ^        ^
+                        |        |
+                        |        |
+                 +--------------+      +--------------+
+                 |   Véhicule   |      |   Commentaire |
+                 +--------------+      +--------------+
+                 | - idVehicule |      | - idComment   |
+                 | - marque     |      | - idUtilisateur (FK) |
+                 | - modèle     |      | - idVehicule (FK)    |
+                 | - année      |      | - texte            |
+                 | - prix       |      | - dateComment      |
+                 +--------------+      +-------------------+
+
+
+## Explications du diagramme :
+
+### La classe Utilisateur représente les utilisateurs du site web. Elle contient des attributs tels que idUtilisateur, nom, email, téléphone et motDePasse (pour stocker le mot de passe de l'utilisateur de manière sécurisée).
+
+### La classe PriseContact représente les prises de contact effectuées par les utilisateurs pour les véhicules. Elle contient des attributs tels que idPriseContact, idUtilisateur (clé étrangère vers la classe Utilisateur), idVehicule (clé étrangère vers la classe Véhicule), message (le message envoyé par l'utilisateur) et datePriseContact (la date de la prise de contact).
+
+### La classe Véhicule représente les véhicules affichés sur le site web. Elle contient des attributs tels que idVehicule, marque, modèle, année et prix.
+
+### La classe Commentaire représente les commentaires postés par les utilisateurs pour les véhicules. Elle contient des attributs tels que idComment, idUtilisateur (clé étrangère vers la classe Utilisateur), idVehicule (clé étrangère vers la classe Véhicule), texte (le contenu du commentaire) et dateComment (la date du commentaire).
+
+### Le diagramme de classes ci-dessus montre la relation entre les utilisateurs, les prises de contact, les véhicules et les commentaires. Les utilisateurs peuvent effectuer des prises de contact pour plusieurs véhicules, et chaque prise de contact est liée à un utilisateur et à un véhicule spécifique. Les utilisateurs peuvent également poster plusieurs commentaires pour différents véhicules, et chaque commentaire est lié à un utilisateur et à un véhicule spécifique.
+
+#### Notez que ce diagramme de classes est une représentation simplifiée et qu'il peut être étendu en fonction des autres fonctionnalités de votre site web, telles que la gestion des administrateurs, des likes pour les commentaires, etc.
