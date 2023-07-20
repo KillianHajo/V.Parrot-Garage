@@ -30,6 +30,9 @@ Assurez-vous de remplacer "NOM_DU_REPERTOIRE_DE_VOTRE_SITE" par le nom du réper
 ## Étape 6 : Visualisation de votre site web
 Félicitations ! Vous devriez maintenant pouvoir visualiser votre site web en local via WampServer. Naviguez à travers les différentes pages pour vérifier que tout fonctionne correctement.
 
+##ATTENTION
+veuillez bien installer phpmyadmin avec les bases de données correspondantes
+  
 ### Remarques importantes :
 Assurez-vous que WampServer est en cours d'exécution chaque fois que vous souhaitez accéder à votre site web en local.
 Vérifiez que les chemins des fichiers (liens vers des fichiers CSS, images, etc.) sont corrects pour une exécution en local.
