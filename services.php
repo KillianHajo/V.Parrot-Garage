@@ -1,6 +1,25 @@
 <?php include('head.php')?>
 
+<?php
+	
+	include 'comment_config.php';
 
+	if (isset($_POST['post_comment'])) {
+
+		$name = $_POST['name'];
+		$message = $_POST['message'];
+		
+		$sql = "INSERT INTO demo (name, message)
+		VALUES ('$name', '$message')";
+
+		if ($conn->query($sql) === TRUE) {
+		echo "";
+		} else {
+		echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+	}
+
+?>
 
 
 <body>
@@ -77,7 +96,31 @@
         Donc pas de mauvaises surprises au moment de la facture. Pour les sociétés, ainsi que les comités d’entreprises qui nous confient l’entretien de leur flotte de véhicule, nous mettons en place automatiquement un taux de remise, ainsi qu’un service très réactif au niveau des délais, ainsi que sur les véhicules de courtoisie.</h6>
 
         <a href="index.php"><div class="end-logo"><img src="assets/Garage V.Parrot.png" class="logo" alt="logo"></div></a>
+<h2 class="comment-title">Commenter notre service</h2>
+        <div class="wrappe">
+		<form action="" method="post" class="form">
+			<input type="text" class="name" name="name" placeholder="Nom">
+			<br>
+			<textarea name="message" cols="30" rows="10" class="message" placeholder="Message"></textarea>
+			<br>
+			<button type="submit" class="btn" name="post_comment">Poster votre avis !</button>
+		</form>
+	</div>
 
+	<div class="conten">
+		<?php
+
+			$sql = "SELECT * FROM demo";
+			$result = $conn->query($sql);
+
+			if ($result->num_rows > 0) {
+			
+			while($row = $result->fetch_assoc()) {
+			
+		?>
+
+		<?php } } ?>
+	</div>
 </section>
 
 
