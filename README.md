@@ -48,7 +48,7 @@ Vous avez maintenant un environnement de développement en local avec WampServer
 #### Ceci est un diagramme de séquence de base pour la connexion à votre site web. Selon votre application spécifique, il pourrait y avoir d'autres fonctionnalités et étapes impliquées dans le processus de connexion. Le diagramme peut également être étendu pour inclure d'autres interactions entre l'utilisateur, le site web et le serveur.
 
 
-# Diagramme de classes :
+Diagramme de classes :
                     +-----------------+
                     |   Utilisateur   |
                     +-----------------+
