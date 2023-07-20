@@ -35,3 +35,14 @@ Assurez-vous que WampServer est en cours d'exécution chaque fois que vous souha
 Vérifiez que les chemins des fichiers (liens vers des fichiers CSS, images, etc.) sont corrects pour une exécution en local.
 En cas de problèmes, vérifiez les fichiers de journalisation (logs) de WampServer pour identifier d'éventuelles erreurs.
 Vous avez maintenant un environnement de développement en local avec WampServer pour tester et améliorer votre site web sans affecter la version en ligne. Bon développement !
+
+## Explication du diagramme :
+
+#### L'utilisateur accède au site web et remplit les champs de connexion avec son nom d'utilisateur et son mot de passe.
+#### Le site web envoie une requête de connexion au serveur en utilisant la méthode POST. Les identifiants sont inclus dans le corps de la requête.
+#### Le serveur vérifie les identifiants en interrogeant la base de données pour trouver une correspondance.
+#### La base de données effectue la vérification et renvoie le résultat au serveur (identifiants valides ou invalides).
+#### Le serveur reçoit le résultat de la vérification et envoie une réponse au site web avec le résultat (identifiants valides ou message d'erreur).
+#### Si les identifiants sont valides, le serveur redirige l'utilisateur vers la page d'accueil du site web.
+#### Si les identifiants sont invalides, le serveur affiche un message d'erreur sur la page de connexion pour informer l'utilisateur que les identifiants sont incorrects.
+#### Ceci est un diagramme de séquence de base pour la connexion à votre site web. Selon votre application spécifique, il pourrait y avoir d'autres fonctionnalités et étapes impliquées dans le processus de connexion. Le diagramme peut également être étendu pour inclure d'autres interactions entre l'utilisateur, le site web et le serveur.
